@@ -15,10 +15,6 @@ spec:
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts-jdk11
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -26,4 +22,4 @@ spec:
           mountPath: /var/jenkins_home
       volumes: 
       - name: jenkins-home
-        emptyDir: { }
+        emptyDir: {}
